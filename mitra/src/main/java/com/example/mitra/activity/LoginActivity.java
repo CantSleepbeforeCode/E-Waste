@@ -1,4 +1,4 @@
-package com.example.mitra;
+package com.example.mitra.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
+import com.example.mitra.R;
+import com.example.mitra.entity.User;
+import com.example.mitra.UserHelper;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 

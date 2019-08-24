@@ -1,4 +1,4 @@
-package com.example.e_waste;
+package com.example.e_waste.activity.baseappcompat;
 
 import android.os.Bundle;
 

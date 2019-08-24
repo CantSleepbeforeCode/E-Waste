@@ -1,4 +1,4 @@
-package com.example.e_waste;
+package com.example.e_waste.activity.splash;
 
 import android.content.Context;
 import android.content.Intent;
@@ -18,6 +18,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
+import com.example.e_waste.R;
+import com.example.e_waste.activity.home.HomeActivity;
+import com.example.e_waste.utils.PreferenceManager;
 
 public class SplashActivity extends AppCompatActivity {
     private ViewPager viewPager;

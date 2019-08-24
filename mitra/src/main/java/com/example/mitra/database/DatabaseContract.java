@@ -1,4 +1,4 @@
-package com.example.mitra;
+package com.example.mitra.database;
 
 import android.database.Cursor;
 import android.net.Uri;
@@ -7,7 +7,7 @@ import android.provider.BaseColumns;
 public class DatabaseContract {
     public static final String TABLE_USER = "users";
     public static final String AUTHORITY = "com.dsc.lapak";
-    private static final String SCHEME = "content";
+    public static final String SCHEME = "content";
 
     public static final Uri CONTENT_URI_USER = new Uri.Builder().scheme(SCHEME)
             .authority(AUTHORITY)

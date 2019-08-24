@@ -1,4 +1,4 @@
-package com.example.mitra;
+package com.example.mitra.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,19 +7,20 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.mitra.entity.User;
+
 import java.util.ArrayList;
 
-import static android.provider.BaseColumns._ID;
-import static com.example.mitra.DatabaseContract.TABLE_USER;
-import static com.example.mitra.DatabaseContract.userColoumn.EMAIL;
-import static com.example.mitra.DatabaseContract.userColoumn.ID;
-import static com.example.mitra.DatabaseContract.userColoumn.PASSWORD;
-import static com.example.mitra.DatabaseContract.userColoumn.USER_LEVEL;
-import static com.example.mitra.DatabaseContract.userColoumn.USER_NAME;
-import static com.example.mitra.DatabaseContract.userColoumn.USER_WALLET;
+import static android.provider.MediaStore.Audio.Playlists.Members._ID;
+import static com.example.mitra.database.DatabaseContract.getColumnString;
+import static com.example.mitra.database.DatabaseContract.userColoumn.EMAIL;
+import static com.example.mitra.database.DatabaseContract.userColoumn.PASSWORD;
+import static com.example.mitra.database.DatabaseContract.userColoumn.USER_LEVEL;
+import static com.example.mitra.database.DatabaseContract.userColoumn.USER_NAME;
+import static com.example.mitra.database.DatabaseContract.userColoumn.USER_WALLET;
 
 public class UserHelper {
-    private static String DATABASE_TABLE_USER = TABLE_USER;
+    private static String DATABASE_TABLE_USER = DatabaseContract.TABLE_USER;
     private Context context;
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase sqLiteDatabase;
@@ -49,12 +50,12 @@ public class UserHelper {
         if (cursor.getCount() > 0) {
             do {
                 user = new User();
-                user.setId(cursor.getString(cursor.getColumnIndexOrThrow(ID)));
-                user.setUserName(cursor.getString(cursor.getColumnIndexOrThrow(USER_NAME)));
-                user.setUserLevel(cursor.getString(cursor.getColumnIndexOrThrow(USER_LEVEL)));
-                user.setUserWallet(cursor.getString(cursor.getColumnIndexOrThrow(USER_WALLET)));
-                user.setEmail(cursor.getString(cursor.getColumnIndexOrThrow(EMAIL)));
-                user.setPassword(cursor.getString(cursor.getColumnIndexOrThrow(PASSWORD)));
+                user.setId(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.userColoumn.ID)));
+                user.setUserName(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.userColoumn.USER_NAME)));
+                user.setUserLevel(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.userColoumn.USER_LEVEL)));
+                user.setUserWallet(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.userColoumn.USER_WALLET)));
+                user.setEmail(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.userColoumn.EMAIL)));
+                user.setPassword(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseContract.userColoumn.PASSWORD)));
 
                 arrayList.add(user);
                 cursor.moveToNext();
@@ -67,46 +68,46 @@ public class UserHelper {
     public long insert(User user) {
         open();
         ContentValues values = new ContentValues();
-        values.put(ID, user.getId());
-        values.put(USER_NAME, user.getUserName());
-        values.put(USER_LEVEL, user.getUserLevel());
-        values.put(USER_WALLET, user.getUserWallet());
-        values.put(EMAIL, user.getEmail());
-        values.put(PASSWORD, user.getPassword());
+        values.put(DatabaseContract.userColoumn.ID, user.getId());
+        values.put(DatabaseContract.userColoumn.USER_NAME, user.getUserName());
+        values.put(DatabaseContract.userColoumn.USER_LEVEL, user.getUserLevel());
+        values.put(DatabaseContract.userColoumn.USER_WALLET, user.getUserWallet());
+        values.put(DatabaseContract.userColoumn.EMAIL, user.getEmail());
+        values.put(DatabaseContract.userColoumn.PASSWORD, user.getPassword());
         return sqLiteDatabase.insert(DATABASE_TABLE_USER,null, values);
     }
 
     public long insertAdmin() {
         ContentValues values = new ContentValues();
         open();
-        values.put(USER_NAME, "Jupri Gonzales");
-        values.put(USER_LEVEL, "mitra");
-        values.put(USER_WALLET, "0");
-        values.put(EMAIL, "mitra@gmail.com");
-        values.put(PASSWORD, "123456");
+        values.put(DatabaseContract.userColoumn.USER_NAME, "Jupri Gonzales");
+        values.put(DatabaseContract.userColoumn.USER_LEVEL, "mitra");
+        values.put(DatabaseContract.userColoumn.USER_WALLET, "0");
+        values.put(DatabaseContract.userColoumn.EMAIL, "mitra@gmail.com");
+        values.put(DatabaseContract.userColoumn.PASSWORD, "123456");
         return sqLiteDatabase.insert(DATABASE_TABLE_USER,null, values);
     }
 
     public int update(User user) {
         ContentValues values = new ContentValues();
-        values.put(ID, user.getId());
-        values.put(USER_NAME, user.getUserName());
-        values.put(USER_LEVEL, user.getUserLevel());
-        values.put(USER_WALLET, user.getUserWallet());
-        values.put(EMAIL, user.getEmail());
-        values.put(PASSWORD, user.getPassword());
-        Log.d("update", DATABASE_TABLE_USER + " \n" + values + " \n" + USER_NAME + " = '" + user.getUserName() + " \n" + null);
-        return sqLiteDatabase.update(DATABASE_TABLE_USER, values, USER_NAME + " = '" + user.getUserName() + "';", null);
+        values.put(DatabaseContract.userColoumn.ID, user.getId());
+        values.put(DatabaseContract.userColoumn.USER_NAME, user.getUserName());
+        values.put(DatabaseContract.userColoumn.USER_LEVEL, user.getUserLevel());
+        values.put(DatabaseContract.userColoumn.USER_WALLET, user.getUserWallet());
+        values.put(DatabaseContract.userColoumn.EMAIL, user.getEmail());
+        values.put(DatabaseContract.userColoumn.PASSWORD, user.getPassword());
+        Log.d("update", DATABASE_TABLE_USER + " \n" + values + " \n" + DatabaseContract.userColoumn.USER_NAME + " = '" + user.getUserName() + " \n" + null);
+        return sqLiteDatabase.update(DATABASE_TABLE_USER, values, DatabaseContract.userColoumn.USER_NAME + " = '" + user.getUserName() + "';", null);
     }
 
     public int delete(String userId) {
-        return sqLiteDatabase.delete(DATABASE_TABLE_USER, ID + " = '" + userId + "'", null);
+        return sqLiteDatabase.delete(DATABASE_TABLE_USER, DatabaseContract.userColoumn.ID + " = '" + userId + "'", null);
     }
 
     public Cursor queryByIdProvider(String userId) {
         return sqLiteDatabase.query(DATABASE_TABLE_USER,
                 null,
-                ID + " = ?",
+                DatabaseContract.userColoumn.ID + " = ?",
                 new String[]{userId},
                 null,
                 null,
@@ -121,7 +122,7 @@ public class UserHelper {
                 null,
                 null,
                 null,
-                USER_NAME + " ASC");
+                DatabaseContract.userColoumn.USER_NAME + " ASC");
     }
 
     public long insertProvider(ContentValues values) {
@@ -129,7 +130,7 @@ public class UserHelper {
     }
 
     public int deleteProvider(String id) {
-        return sqLiteDatabase.delete(DATABASE_TABLE_USER, ID + " = ?", new String[]{id});
+        return sqLiteDatabase.delete(DATABASE_TABLE_USER, DatabaseContract.userColoumn.ID + " = ?", new String[]{id});
     }
 
     public String idUser = "";
@@ -144,9 +145,9 @@ public class UserHelper {
     public User Authenticate(User user, Context context){
         databaseHelper = new DatabaseHelper(context);
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_USER, // Milih Table
-                new String[]{ID, USER_NAME, USER_LEVEL, USER_WALLET, EMAIL, PASSWORD}, // milih kolom untuk di query
-                EMAIL + "=?",
+        Cursor cursor = db.query(DatabaseContract.TABLE_USER, // Milih Table
+                new String[]{DatabaseContract.userColoumn.ID, DatabaseContract.userColoumn.USER_NAME, DatabaseContract.userColoumn.USER_LEVEL, DatabaseContract.userColoumn.USER_WALLET, DatabaseContract.userColoumn.EMAIL, DatabaseContract.userColoumn.PASSWORD}, // milih kolom untuk di query
+                DatabaseContract.userColoumn.EMAIL + "=?",
                 new String[]{user.email}, // ayat ke
                 null, null, null );
         if(cursor != null && cursor.moveToFirst()&& cursor.getCount()>0){
@@ -173,9 +174,9 @@ public class UserHelper {
     public boolean isEmailExists(String email, Context context){
         databaseHelper = new DatabaseHelper(context);
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_USER, // Milih Table
-                new String[]{ID, USER_NAME, USER_LEVEL, USER_WALLET, EMAIL, PASSWORD}, // milih kolom untuk di query
-                EMAIL + "=?",
+        Cursor cursor = db.query(DatabaseContract.TABLE_USER, // Milih Table
+                new String[]{DatabaseContract.userColoumn.ID, DatabaseContract.userColoumn.USER_NAME, DatabaseContract.userColoumn.USER_LEVEL, DatabaseContract.userColoumn.USER_WALLET, DatabaseContract.userColoumn.EMAIL, DatabaseContract.userColoumn.PASSWORD}, // milih kolom untuk di query
+                DatabaseContract.userColoumn.EMAIL + "=?",
                 new String[]{email}, // ayat ke
                 null, null, null );
         if(cursor != null && cursor.moveToFirst() && cursor.getCount() > 0){

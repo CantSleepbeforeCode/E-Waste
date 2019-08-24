@@ -1,4 +1,4 @@
-package com.example.mitra;
+package com.example.e_waste.activity.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,26 +6,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.e_waste.R;
+import com.example.e_waste.activity.splash.SplashActivity;
+
 public class MainActivity extends AppCompatActivity {
-    UserHelper userHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        userHelper = new UserHelper(this);
-
-        if (!userHelper.isEmailExists("mitra@gmail.com", getApplicationContext())) {
-            userHelper.insertAdmin();
-        }
-
         int splash_time = 2000;
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent splashIntent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent splashIntent = new Intent(MainActivity.this, SplashActivity.class);
                 startActivity(splashIntent);
                 finish();
             }

@@ -13,13 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
-        <activity android:name=".NavigationActivity"></activity>
+        <activity android:name=".activity.navigation.NavigationActivity"></activity>
         <activity
-            android:name=".HomeActivity"/>
+            android:name=".activity.home.HomeActivity"/>
         <activity
-            android:name=".SplashActivity"/>
+            android:name=".activity.splash.SplashActivity"/>
         <activity
-            android:name=".MainActivity">
+            android:name=".activity.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

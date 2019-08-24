@@ -1,4 +1,4 @@
-package com.example.e_waste;
+package com.example.e_waste.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

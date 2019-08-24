@@ -1,8 +1,10 @@
-package com.example.mitra;
+package com.example.mitra.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.mitra.R;
 
 public class HomeActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.e_waste;
+package com.example.e_waste.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.e_waste.entity.NearestPlace;
+import com.example.e_waste.R;
+import com.example.e_waste.activity.NavigationActivity;
 
 import java.util.ArrayList;
 

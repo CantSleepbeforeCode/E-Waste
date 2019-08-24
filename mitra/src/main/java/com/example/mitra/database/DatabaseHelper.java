@@ -1,4 +1,4 @@
-package com.example.mitra;
+package com.example.mitra.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

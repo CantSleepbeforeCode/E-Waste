@@ -1,4 +1,6 @@
-package com.example.e_waste;
+package com.example.e_waste.entity;
+
+import com.example.e_waste.entity.NearestPlace;
 
 import java.util.ArrayList;
 

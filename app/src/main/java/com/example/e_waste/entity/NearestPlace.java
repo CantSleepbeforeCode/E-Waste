@@ -1,4 +1,4 @@
-package com.example.e_waste;
+package com.example.e_waste.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;

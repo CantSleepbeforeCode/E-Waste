@@ -1,16 +1,16 @@
-package com.example.mitra;
+package com.example.mitra.entity;
 
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import static com.example.mitra.DatabaseContract.getColumnString;
-import static com.example.mitra.DatabaseContract.userColoumn.EMAIL;
-import static com.example.mitra.DatabaseContract.userColoumn.ID;
-import static com.example.mitra.DatabaseContract.userColoumn.PASSWORD;
-import static com.example.mitra.DatabaseContract.userColoumn.USER_LEVEL;
-import static com.example.mitra.DatabaseContract.userColoumn.USER_NAME;
-import static com.example.mitra.DatabaseContract.userColoumn.USER_WALLET;
+import static android.os.Build.ID;
+import static com.example.mitra.database.DatabaseContract.getColumnString;
+import static com.example.mitra.database.DatabaseContract.userColoumn.EMAIL;
+import static com.example.mitra.database.DatabaseContract.userColoumn.PASSWORD;
+import static com.example.mitra.database.DatabaseContract.userColoumn.USER_LEVEL;
+import static com.example.mitra.database.DatabaseContract.userColoumn.USER_NAME;
+import static com.example.mitra.database.DatabaseContract.userColoumn.USER_WALLET;
 
 public class User implements Parcelable {
     private String id;
