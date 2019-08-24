@@ -15,8 +15,8 @@ public class DataDummyPlace {
             {
                     "B",
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-                    "-1.256951",
-                    "116.867540",
+                    "-1.255758",
+                    "116.868562",
                     "300 m",
                     "@drawable/bin_green"
             },
