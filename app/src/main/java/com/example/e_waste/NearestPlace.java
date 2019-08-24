@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class NearestPlace implements Parcelable {
-    String name, description, latitude, longtitude, range, imageBin;
+    String name, description, latitude, longtitude, range, percentage, imageBin;
 
     public String getName() {
         return name;
@@ -46,6 +46,14 @@ public class NearestPlace implements Parcelable {
         this.range = range;
     }
 
+    public String getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(String percentage) {
+        this.percentage = percentage;
+    }
+
     public String getImageBin() {
         return imageBin;
     }
@@ -66,6 +74,8 @@ public class NearestPlace implements Parcelable {
         parcel.writeString(this.latitude);
         parcel.writeString(this.longtitude);
         parcel.writeString(this.range);
+        parcel.writeString(this.percentage);
+        parcel.writeString(this.imageBin);
     }
 
     public NearestPlace() {}
@@ -76,6 +86,8 @@ public class NearestPlace implements Parcelable {
         latitude = in.readString();
         longtitude = in.readString();
         range = in.readString();
+        percentage = in.readString();
+        imageBin = in.readString();
     }
 
     public static final Creator<NearestPlace> CREATOR = new Creator<NearestPlace>() {

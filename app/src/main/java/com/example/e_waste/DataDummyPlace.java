@@ -6,35 +6,39 @@ public class DataDummyPlace {
     public static String[][] dataPlaces = new String[][] {
             {
                     "A",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "-1.256951",
                     "116.867540",
                     "300 m",
-                    "@drawable/bin_green"
+                    "20%",
+                    "@drawable/ic_green"
             },
             {
                     "B",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "-1.255758",
                     "116.868562",
                     "300 m",
-                    "@drawable/bin_green"
+                    "20%",
+                    "@drawable/ic_red"
             },
             {
                     "C",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "-1.256951",
                     "116.867540",
                     "300 m",
-                    "@drawable/bin_green"
+                    "20%",
+                    "@drawable/ic_yellow"
             },
             {
                     "D",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     "-1.256951",
                     "116.867540",
                     "300 m",
-                    "@drawable/bin_green"
+                    "20%",
+                    "@drawable/ic_red"
             }
     };
 
@@ -47,7 +51,8 @@ public class DataDummyPlace {
             nearestPlace.setLatitude(aData[2]);
             nearestPlace.setLongtitude(aData[3]);
             nearestPlace.setRange(aData[4]);
-            nearestPlace.setImageBin(aData[5]);
+            nearestPlace.setPercentage(aData[5]);
+            nearestPlace.setImageBin(aData[6]);
 
             listPlace.add(nearestPlace);
         }

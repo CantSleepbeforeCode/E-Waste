@@ -26,6 +26,7 @@
         android:layout_marginStart="8dp"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toEndOf="@+id/item_image"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/slide_1_title" />
@@ -34,9 +35,8 @@
         android:id="@+id/item_description"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-
-        android:layout_marginTop="8dp"
         android:text="@string/slide_1_description"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="@+id/item_name"
         app:layout_constraintTop_toBottomOf="@+id/item_name" />
 
@@ -47,7 +47,20 @@
         tools:text="30 KM"
         android:textSize="12sp"
         android:textStyle="italic"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/item_image"
+        app:layout_constraintStart_toStartOf="@+id/item_image"
+        app:layout_constraintTop_toBottomOf="@+id/item_image"
+        tools:text="20%" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

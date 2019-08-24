@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':mitra'
 rootProject.name='E-Waste'

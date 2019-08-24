@@ -45,9 +45,10 @@ public class NearestAdapter extends RecyclerView.Adapter<NearestAdapter.Category
         categoryViewHolder.tvName.setText(getNearestPlaces().get(position).getName());
         categoryViewHolder.tvDescription.setText(getNearestPlaces().get(position).getDescription());
         categoryViewHolder.tvRange.setText(getNearestPlaces().get(position).getRange());
+        categoryViewHolder.tvPercentage.setText(getNearestPlaces().get(position).getPercentage());
 
         Glide.with(context)
-                .load(getNearestPlaces().get(position).getImageBin())
+                .load(getImage(getNearestPlaces().get(position).getImageBin()))
                 .apply(new RequestOptions().override(60, 60).centerCrop().placeholder(R.color.colorAccent))
                 .into(categoryViewHolder.imageItem);
 
@@ -60,8 +61,6 @@ public class NearestAdapter extends RecyclerView.Adapter<NearestAdapter.Category
                 context.startActivity(intent);
             }
         });
-
-
     }
 
     @Override
@@ -71,7 +70,7 @@ public class NearestAdapter extends RecyclerView.Adapter<NearestAdapter.Category
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
         ImageView imageItem;
-        TextView tvName, tvDescription, tvRange;
+        TextView tvName, tvDescription, tvRange, tvPercentage;
         ConstraintLayout constraintLayout;
 
         public CategoryViewHolder(@NonNull View view) {
@@ -80,7 +79,12 @@ public class NearestAdapter extends RecyclerView.Adapter<NearestAdapter.Category
             tvName = view.findViewById(R.id.item_name);
             tvDescription = view.findViewById(R.id.item_description);
             tvRange = view.findViewById(R.id.item_range);
+            tvPercentage = view.findViewById(R.id.item_percentage);
             constraintLayout = view.findViewById(R.id.base_area);
         }
+    }
+
+    private int getImage(String image) {
+        return context.getResources().getIdentifier(image, "drawable", context.getPackageName());
     }
 }
