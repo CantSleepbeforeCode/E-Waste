@@ -3,10 +3,10 @@
     <item
         android:id="@+id/navigation_nearest"
         android:icon="@drawable/icon_global"
-        android:title="@string/nearest"/>
+        android:title="@string/global"/>
 
     <item
         android:id="@+id/navigation_global"
         android:icon="@drawable/icon_near_pin"
-        android:title="@string/global"/>
+        android:title="@string/nearest"/>
 </menu>

@@ -12,7 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import static com.example.e_waste.BaseAppCompatActivity.KEY_FRAGMENT;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
-    private Fragment pageContent = new NearestFragment();
+    private Fragment pageContent = new GlobalFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +40,11 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case R.id.navigation_nearest:
-                pageContent = new NearestFragment();
-                break;
             case R.id.navigation_global:
                 pageContent = new GlobalFragment();
+                break;
+            case R.id.navigation_nearest:
+                pageContent = new NearestFragment();
                 break;
         }
         getSupportFragmentManager().beginTransaction()
