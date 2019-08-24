@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base_area"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/radius_corner_background"
@@ -11,7 +12,7 @@
     android:padding="@dimen/tiny_margin">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/item_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@color/colorAccent"
@@ -25,7 +26,7 @@
         android:layout_marginStart="8dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/item_image"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/slide_1_title" />
 
@@ -40,6 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/item_name" />
 
     <TextView
+        android:id="@+id/item_range"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="30 KM"
@@ -47,25 +49,5 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
-    <!--    <TextView-->
-<!--        android:id="@+id/item_name"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        tools:text="@string/nearest"-->
-<!--        android:textSize="20sp"-->
-<!--        android:textStyle="bold"/>-->
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        tools:text="Distance"-->
-<!--        android:textSize="14sp"/>-->
-<!--    -->
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/item_name"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

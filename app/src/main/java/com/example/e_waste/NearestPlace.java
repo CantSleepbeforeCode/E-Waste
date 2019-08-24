@@ -4,7 +4,23 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class NearestPlace implements Parcelable {
-    String latitude, longtitude, range;
+    String name, description, latitude, longtitude, range, imageBin;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getLatitude() {
         return latitude;
@@ -30,6 +46,14 @@ public class NearestPlace implements Parcelable {
         this.range = range;
     }
 
+    public String getImageBin() {
+        return imageBin;
+    }
+
+    public void setImageBin(String imageBin) {
+        this.imageBin = imageBin;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -37,6 +61,8 @@ public class NearestPlace implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(this.name);
+        parcel.writeString(this.description);
         parcel.writeString(this.latitude);
         parcel.writeString(this.longtitude);
         parcel.writeString(this.range);
@@ -45,6 +71,8 @@ public class NearestPlace implements Parcelable {
     public NearestPlace() {}
 
     protected NearestPlace(Parcel in) {
+        name = in.readString();
+        description = in.readString();
         latitude = in.readString();
         longtitude = in.readString();
         range = in.readString();

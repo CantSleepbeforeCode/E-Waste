@@ -1,6 +1,7 @@
 package com.example.e_waste;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -38,6 +42,25 @@ public class NearestAdapter extends RecyclerView.Adapter<NearestAdapter.Category
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, final int position) {
+        categoryViewHolder.tvName.setText(getNearestPlaces().get(position).getName());
+        categoryViewHolder.tvDescription.setText(getNearestPlaces().get(position).getDescription());
+        categoryViewHolder.tvRange.setText(getNearestPlaces().get(position).getRange());
+
+        Glide.with(context)
+                .load(getNearestPlaces().get(position).getImageBin())
+                .apply(new RequestOptions().override(60, 60).centerCrop().placeholder(R.color.colorAccent))
+                .into(categoryViewHolder.imageItem);
+
+        categoryViewHolder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, NavigationActivity.class);
+                intent.putExtra("latitude", getNearestPlaces().get(position).getLatitude());
+                intent.putExtra("longtitude", getNearestPlaces().get(position).getLongtitude());
+                context.startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -47,9 +70,17 @@ public class NearestAdapter extends RecyclerView.Adapter<NearestAdapter.Category
     }
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageItem;
+        TextView tvName, tvDescription, tvRange;
+        ConstraintLayout constraintLayout;
 
         public CategoryViewHolder(@NonNull View view) {
             super(view);
+            imageItem = view.findViewById(R.id.item_image);
+            tvName = view.findViewById(R.id.item_name);
+            tvDescription = view.findViewById(R.id.item_description);
+            tvRange = view.findViewById(R.id.item_range);
+            constraintLayout = view.findViewById(R.id.base_area);
         }
     }
 }

@@ -22,7 +22,17 @@ public class NearestFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nearest, container, false);
+        View view = inflater.inflate(R.layout.fragment_nearest, container, false);
+        recyclerView = view.findViewById(R.id.recycler_nearest_place);
+        list.addAll(DataDummyPlace.getListDataPlaces());
+        linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        nearestAdapter = new NearestAdapter(getContext());
+        nearestAdapter.setPlaces(list);
+        recyclerView.setAdapter(nearestAdapter);
+        return view;
     }
 
 }

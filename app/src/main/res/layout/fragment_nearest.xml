@@ -12,7 +12,7 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_area"
+            android:id="@+id/recycler_nearest_place"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
