@@ -4,4 +4,9 @@
     <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="login_failed">Failed to Login. Please check your data.</string>
+    <string name="error_name">Please enter a valid username!</string>
+    <string name="error_email">Please enter a  valid Email!</string>
+    <string name="error_length_name">Your Name is to short!</string>
+    <string name="error_password_length">Password can\'t be blank or too short</string>
 </resources>
