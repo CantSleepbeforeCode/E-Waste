@@ -9,4 +9,8 @@
     <string name="error_email">Please enter a  valid Email!</string>
     <string name="error_length_name">Your Name is to short!</string>
     <string name="error_password_length">Password can\'t be blank or too short</string>
+    <string name="trash">Trash</string>
+    <string name="ready_to_pick_up_some_trash">Ready to pick up some trash?</string>
+    <string name="maintenance">Maintenance</string>
+    <string name="maintenance_the_tools">Maintenance the tools</string>
 </resources>
