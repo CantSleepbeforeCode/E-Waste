@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.camera.CameraPosition;
+import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
 import com.mapbox.mapboxsdk.location.modes.CameraMode;
@@ -78,7 +80,7 @@ public class NearestFragment extends Fragment implements OnMapReadyCallback, Per
                 }
             });
         } else {
-            Toast.makeText(getContext(), R.string.app_name, Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), R.string.error, Toast.LENGTH_LONG).show();
             getActivity().finish();
         }
     }
@@ -115,8 +117,8 @@ public class NearestFragment extends Fragment implements OnMapReadyCallback, Per
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onDestroyView() {
+        super.onDestroyView();
         mapView.onDestroy();
     }
 
