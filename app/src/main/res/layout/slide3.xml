@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/ic_zero_emission"/>
+            android:src="@drawable/ic_smiling"/>
 
         <TextView
             android:layout_width="wrap_content"

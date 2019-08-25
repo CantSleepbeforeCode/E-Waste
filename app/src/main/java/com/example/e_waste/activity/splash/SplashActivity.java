@@ -22,8 +22,13 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.e_waste.R;
 import com.example.e_waste.activity.home.HomeActivity;
 import com.example.e_waste.utils.PreferenceManager;
+import com.mapbox.android.core.permissions.PermissionsListener;
+import com.mapbox.android.core.permissions.PermissionsManager;
 
-public class SplashActivity extends AppCompatActivity {
+import java.util.List;
+
+public class SplashActivity extends AppCompatActivity implements PermissionsListener {
+    private PermissionsManager permissionsManager;
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout layoutDots;
@@ -35,6 +40,11 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        permissionsManager = new PermissionsManager(this);
+        permissionsManager.requestLocationPermissions(this);
+
 
         preferenceManager = new PreferenceManager(this);
         if (!preferenceManager.isFirstTimeLaunch()) {
@@ -144,6 +154,16 @@ public class SplashActivity extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.TRANSPARENT);
         }
+    }
+
+    @Override
+    public void onExplanationNeeded(List<String> permissionsToExplain) {
+
+    }
+
+    @Override
+    public void onPermissionResult(boolean granted) {
+
     }
 
     public class MyViewPagerAdapter extends PagerAdapter {

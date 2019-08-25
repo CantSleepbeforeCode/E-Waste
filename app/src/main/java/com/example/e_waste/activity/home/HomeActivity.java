@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import static com.example.e_waste.activity.baseappcompat.BaseAppCompatActivity.KEY_FRAGMENT;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
-    private Fragment pageContent = new GlobalFragment();
+    private Fragment pageContent = new NearestFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

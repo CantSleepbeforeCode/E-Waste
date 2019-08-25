@@ -8,8 +8,12 @@ import android.os.Handler;
 
 import com.example.e_waste.R;
 import com.example.e_waste.activity.splash.SplashActivity;
+import com.mapbox.android.core.permissions.PermissionsListener;
+import com.mapbox.android.core.permissions.PermissionsManager;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements PermissionsListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,5 +30,15 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }, splash_time);
+    }
+
+    @Override
+    public void onExplanationNeeded(List<String> permissionsToExplain) {
+
+    }
+
+    @Override
+    public void onPermissionResult(boolean granted) {
+
     }
 }

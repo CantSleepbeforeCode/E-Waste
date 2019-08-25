@@ -1,7 +1,5 @@
 package com.example.e_waste.entity;
 
-import com.example.e_waste.entity.NearestPlace;
-
 import java.util.ArrayList;
 
 public class DataDummyPlace {
@@ -12,7 +10,7 @@ public class DataDummyPlace {
                     "-1.256951",
                     "116.867540",
                     "300 m",
-                    "20%",
+                    "10%",
                     "@drawable/ic_green"
             },
             {
@@ -21,7 +19,7 @@ public class DataDummyPlace {
                     "-1.255758",
                     "116.868562",
                     "300 m",
-                    "20%",
+                    "90%",
                     "@drawable/ic_red"
             },
             {
@@ -30,7 +28,7 @@ public class DataDummyPlace {
                     "-1.256951",
                     "116.867540",
                     "300 m",
-                    "20%",
+                    "60%",
                     "@drawable/ic_yellow"
             },
             {
@@ -39,7 +37,7 @@ public class DataDummyPlace {
                     "-1.256951",
                     "116.867540",
                     "300 m",
-                    "20%",
+                    "98%",
                     "@drawable/ic_red"
             }
     };

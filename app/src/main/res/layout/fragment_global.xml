@@ -12,6 +12,6 @@
         android:layout_height="match_parent"
         mapbox:mapbox_uiLogo="false"
         mapbox:mapbox_uiAttribution="false"
-        mapbox:mapbox_cameraZoom="17"/>
+        mapbox:mapbox_cameraZoom="17"   />
 
 </FrameLayout>
