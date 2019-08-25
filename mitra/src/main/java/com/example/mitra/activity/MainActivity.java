@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         userHelper = new UserHelper(this);
+        //string
 
         if (!userHelper.isEmailExists("mitra@gmail.com", getApplicationContext())) {
             userHelper.insertAdmin();
