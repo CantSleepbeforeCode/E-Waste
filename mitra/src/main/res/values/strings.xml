@@ -13,4 +13,10 @@
     <string name="ready_to_pick_up_some_trash">Ready to pick up some trash?</string>
     <string name="maintenance">Maintenance</string>
     <string name="maintenance_the_tools">Maintenance the tools</string>
+    <string name="feature_not_available">Sorry, this feature is not available yet</string>
+
+    <array name="place_spinner">
+        <item>Karang Joang</item>
+        <item>Kariangau</item>
+    </array>
 </resources>

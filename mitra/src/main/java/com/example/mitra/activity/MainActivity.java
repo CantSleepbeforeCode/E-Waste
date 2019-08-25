@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.mitra.R;
-import com.example.mitra.UserHelper;
+import com.example.mitra.database.UserHelper;
 
 public class MainActivity extends AppCompatActivity {
     UserHelper userHelper;
