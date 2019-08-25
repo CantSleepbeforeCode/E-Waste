@@ -44,8 +44,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.card_add:
-                object = findViewById(R.id.card_add);
-                showSnackbar(object, message, duration);
+                Intent intentAdd = new Intent(HomeActivity.this, RegisterDevice.class);
+                startActivity(intentAdd);
                 break;
         }
 
