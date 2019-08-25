@@ -2,13 +2,13 @@
     <string name="app_name">E-Waste</string>
 
     <string name="slide_1_title">Pengurangan Biaya</string>
-    <string name="slide_1_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
+    <string name="slide_1_description">Rute yang sudah dioptimalkan membantu user dalam menghemat biaya bahan bakar.</string>
 
-    <string name="slide_2_title">Lebih Efisien</string>
-    <string name="slide_2_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
+    <string name="slide_2_title">Mengurasi Emisi CO2</string>
+    <string name="slide_2_description">Mengurangi penggunaan kendaraan bermotor dan meningkatkan kualitas udara.</string>
 
-    <string name="slide_3_title">Mengurasi Emisi CO2</string>
-    <string name="slide_3_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </string>
+    <string name="slide_3_title">User Friendly</string>
+    <string name="slide_3_description">Tampilan aplikasi mobile yang mudah digunakan dimana saja dan kapan saja.</string>
     <string name="next">Next</string>
     <string name="skip">Skip</string>
     <string name="start">Start</string>

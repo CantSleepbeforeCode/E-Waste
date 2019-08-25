@@ -16,6 +16,7 @@ import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.geojson.Feature;
 import com.mapbox.geojson.Point;
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.Marker;
 import com.mapbox.mapboxsdk.location.LocationComponent;
 import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
 import com.mapbox.mapboxsdk.location.modes.CameraMode;
@@ -134,7 +135,7 @@ public class GlobalFragment extends Fragment implements OnMapReadyCallback, Perm
     }
 
     @Override
-    public void onMapReady(@NonNull MapboxMap mapboxMap) {
+    public void onMapReady(@NonNull final MapboxMap mapboxMap) {
         GlobalFragment.this.mapboxMap = mapboxMap;
 
         mapboxMap.setStyle(Style.MAPBOX_STREETS, new Style.OnStyleLoaded() {
@@ -211,6 +212,14 @@ public class GlobalFragment extends Fragment implements OnMapReadyCallback, Perm
                                 PropertyFactory.iconImage("marker-icon-id5")
                         );
                         style.addLayer(symbolLayer5);
+
+                        mapboxMap.setOnMarkerClickListener(new MapboxMap.OnMarkerClickListener() {
+                            @Override
+                            public boolean onMarkerClick(@NonNull Marker marker) {
+                                Toast.makeText(getContext(), "Yas", Toast.LENGTH_LONG).show();
+                                return true;
+                            }
+                        });
                     }
                 });
     }

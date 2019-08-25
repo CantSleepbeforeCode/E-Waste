@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">E-Waste</string>
+    <string name="app_name">E-Waste Mitra</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="sign_in">Sign In</string>
@@ -14,6 +14,7 @@
     <string name="maintenance">Maintenance</string>
     <string name="maintenance_the_tools">Maintenance the tools</string>
     <string name="feature_not_available">Sorry, this feature is not available yet</string>
+    <string name="address">Address</string>
 
     <array name="place_spinner">
         <item>Karang Joang</item>
