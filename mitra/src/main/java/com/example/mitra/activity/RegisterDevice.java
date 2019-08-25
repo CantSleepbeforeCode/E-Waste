@@ -2,13 +2,16 @@ package com.example.mitra.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.mitra.R;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,7 +46,17 @@ public class RegisterDevice extends AppCompatActivity implements AntaresHTTPAPI.
         btnKirim.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                antaresAPIHTTP.createDevice(accessKey, appName, newDevice);
+                if(edtNamaDevice != null && edtLokasiDevice != null){
+                    try {
+                        antaresAPIHTTP.createDevice(accessKey, appName, newDevice);
+                        edtLokasiDevice.setText("");
+                        edtNamaDevice.setText("");
+                    }catch (Exception e){
+                        Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_LONG);
+                    }
+                }else{
+                    Snackbar.make(view, "Cek Kembali", Snackbar.LENGTH_LONG);
+                }
             }
         });
 
@@ -51,7 +64,17 @@ public class RegisterDevice extends AppCompatActivity implements AntaresHTTPAPI.
 
             @Override
             public void onClick(View view) {
-                antaresAPIHTTP.deleteDevice(accessKey, appName, newDevice);
+                if(edtNamaDevice != null && edtLokasiDevice != null){
+                    try {
+                        antaresAPIHTTP.deleteDevice(accessKey, appName, newDevice);
+                        edtLokasiDevice.setText("");
+                        edtNamaDevice.setText("");
+                    }catch (Exception e){
+                        Snackbar.make(view, e.getMessage(), Snackbar.LENGTH_LONG);
+                    }
+                }else{
+                    Snackbar.make(view, "Cek Kembali", Snackbar.LENGTH_LONG);
+                }
             }
         });
     }
